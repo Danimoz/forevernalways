@@ -75,7 +75,7 @@ export default async function Home({ searchParams }: SearchParams) {
           </p>  
           <p className="text-center text-xl">
             <span className="font-bold text-2xl">Thank You</span><br />
-            Thank you for your love, support, and generosity. We can't wait to celebrate with you!
+            Thank you for your love, support, and generosity. We can&apos;t wait to celebrate with you!
             Love,
             Maris & Emmanuel
           </p>

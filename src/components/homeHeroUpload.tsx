@@ -53,7 +53,7 @@ export default function HomeHeroUpload() {
 
       <div className="absolute inset-0 flex flex-col items-center justify-center z-40">
         <h1 className="text-4xl font-bold text-center text-white">Maris & Emmanuel</h1>
-        <p className="text-2xl font-semibold italic text-white mt-4">Forever & Always '24</p>
+        <p className="text-2xl font-semibold italic text-white mt-4">Forever & Always &apos;24</p>
         <button 
           className="p-4 bg-gradient-to-r from-[#ef2b7c] to-[#98fb98] text-white rounded-lg shadow-xl mt-8 inline-flex items-center gap-x-4"
           onClick={handleButtonClick}
