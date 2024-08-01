@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import UploadPictureOnLoad from "@/components/uploadPictureOnLoad";
 import { getPhotos } from "@/lib/getPhotos";
 import { Photo } from "@/types";
 import HomeHeroUpload from "@/components/homeHeroUpload";
@@ -17,10 +16,7 @@ export default async function Home({ searchParams }: SearchParams) {
   const photos = await getPhotos(page, pageSize);
 
   return (
-    <main className="min-h-screen">
-      {/* Prompt user to take picture */}
-      <UploadPictureOnLoad />
-      
+    <main className="min-h-screen">      
       <HomeHeroUpload />
 
       <section className="py-12 md:py-16">
