@@ -25,8 +25,10 @@ export default function UploadPictureOnLoad(){
   useEffect(() => {
     const promptCamera = async () => {
       try {
-        const mediaStream = await navigator.mediaDevices.getUserMedia({ video: true });
+        const mediaStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' }, audio: false });
+        console.log('strem', mediaStream)
         setStream(mediaStream)
+        console.log('see', stream)
         if (videoRef.current) {
           videoRef.current.srcObject = mediaStream;
         }
