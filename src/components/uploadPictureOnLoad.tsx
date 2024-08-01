@@ -25,7 +25,7 @@ export default function UploadPictureOnLoad(){
   useEffect(() => {
     const promptCamera = async () => {
       try {
-        const mediaStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+        const mediaStream = await navigator.mediaDevices.getUserMedia({ video: true });
         setStream(mediaStream)
         if (videoRef.current) {
           videoRef.current.srcObject = mediaStream;
@@ -37,6 +37,18 @@ export default function UploadPictureOnLoad(){
         toast.error('Error accessing camera')
       }
     }
+
+    const handleBackButton = (event: PopStateEvent) => {
+      if (event.state && event.state.camera) {
+        stopCamera();
+      }
+    }
+  
+    const handleEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        stopCamera();
+      }
+    };
 
     promptCamera();
 
@@ -76,24 +88,13 @@ export default function UploadPictureOnLoad(){
       setStream(null);
       setIsCameraReady(false);
     }
-  };
-
-  const handleBackButton = (event: PopStateEvent) => {
-    event.preventDefault();
-    stopCamera();
-    window.removeEventListener('popstate', handleBackButton);
-  }
-
-  const handleEscapeKey = (event: KeyboardEvent) => {
-    if (event.key === 'Escape') {
-      stopCamera();
-    }
+    window.history.back();
   };
 
   return (
     <div>
       {isCameraReady && (
-        <div className="fixed top-0 left-0 w-screen h-screen z-50">
+        <div className="fixed top-0 left-0 w-screen h-screen z-[9999]">
           <video ref={videoRef} autoPlay playsInline style={{ width: '100%', display: stream ? 'block': 'none', objectFit: 'cover' }} />
           <div className="absolute bottom-4 left-0 right-0 flex justify-center items-center">
             <button
