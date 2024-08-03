@@ -19,6 +19,26 @@ export default async function Home({ searchParams }: SearchParams) {
     <main className="min-h-screen">      
       <HomeHeroUpload />
 
+      <section id="gifts" className="py-12">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center sm:text-4xl md:text-5xl">Gifts</h2>
+          <p className="text-center mt-4 text-xl ">Dear Family and Friends,
+            We are so excited to celebrate our special day with you! Your presence at our wedding is the greatest gift of all. If you wish to honor us with a gift, 
+          </p>
+          <p className="text-center text-xl py-4">
+            <span className="font-bold text-2xl">Bank Account Details</span><br />
+            Bank: GTBank<br />
+            Account Number: 0137100368
+          </p>  
+          <p className="text-center text-xl">
+            <span className="font-bold text-2xl">Thank You</span><br />
+            Thank you for your love, support, and generosity. We can&apos;t wait to celebrate with you!
+            Love,
+            Maris & Emmanuel
+          </p>
+        </div>            
+      </section>
+
       <section className="py-12 md:py-16">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center sm:text-4xl md:text-5xl">Photo Gallery</h2>
@@ -56,26 +76,6 @@ export default async function Home({ searchParams }: SearchParams) {
             </div>
           </Suspense>
         </div>
-      </section>
-
-      <section id="gifts" className="py-12">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center sm:text-4xl md:text-5xl">Gifts</h2>
-          <p className="text-center mt-4 text-xl ">Dear Family and Friends,
-            We are so excited to celebrate our special day with you! Your presence at our wedding is the greatest gift of all. If you wish to honor us with a gift, 
-          </p>
-          <p className="text-center text-xl py-4">
-            <span className="font-bold text-2xl">Bank Account Details</span><br />
-            Bank: GTBank<br />
-            Account Number: 0137100368
-          </p>  
-          <p className="text-center text-xl">
-            <span className="font-bold text-2xl">Thank You</span><br />
-            Thank you for your love, support, and generosity. We can&apos;t wait to celebrate with you!
-            Love,
-            Maris & Emmanuel
-          </p>
-        </div>            
       </section>
     </main>
   );
