@@ -60,14 +60,14 @@ export default async function Home({ searchParams }: SearchParams) {
 
             <div className="flex justify-end gap-x-4 mt-6">
               <Link
-                href={{ pathname: '/', query: { page: photos.page - 1 } }}
+                href={{ pathname: '/', query: { page: Number(photos.page) - 1 } }}
                 className={`rounded-xl px-6 py-3 bg-[#ef2b7c] text-white ${photos.page <= 1 && 'pointer-events-none opacity-50' } `}
                 scroll={false}
               >
                 Previous
               </Link>
               <Link
-                href={{ pathname: '/', query: { page: photos.page + 1 } }}
+                href={{ pathname: '/', query: { page: Number(photos.page) + 1 } }}
                 className={`rounded-xl px-6 py-3 bg-[#ef2b7c] text-white ${photos.page >= photos.totalPages && 'pointer-events-none opacity-50' } `}
                 scroll={false}
               >
